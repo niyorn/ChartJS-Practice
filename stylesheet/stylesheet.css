@@ -1,0 +1,113 @@
+::-webkit-scrollbar {display:none;}
+
+body {
+  font-family: Roboto;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 6em;
+  text-transform: uppercase;
+  color: #00458d;
+}
+
+p {
+  font-size: 2em;
+  margin-top: 2rem
+}
+
+button {
+  color: black;
+  background-color: white;
+  font-size: 1.2em;
+  height: 100%;
+  line-height: 0.7;
+  border: none;
+}
+
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  padding: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 6em;
+  color: rgb(31, 31, 31);
+  overflow: hidden;
+}
+
+.container__radarChart {
+  width: 50vw;
+}
+
+.container__text {
+  display: grid;
+  height: 92vh;
+  grid-template-rows: repeat(2, 1fr);
+  -webkit-animation: slide-in-right ease-in-out 1s;
+  animation: slide-in-right ease-in-out 1s;
+}
+
+.bedrijven {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-y: hidden;
+  padding-right: 17px;
+}
+
+.bedrijven ul{
+  width: 100%;
+  overflow-y: scroll;
+}
+.bedrijven ul li{
+  height: 4em;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.bedrijven ul li img{
+  display: inline-block;
+  height: 100%;
+  width: auto;
+  background-color: green;
+  float:left;
+}
+
+#myChart {
+  height: 100%;
+  width: auto;
+}
+
+
+/*------------------Animation---------------------------*/
+
+@-webkit-keyframes slide-in-right {
+  from {
+    -webkit-transform: translateX(100vw);
+    transform: translateX(100vw);
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    -webkit-transform: translateX(100vw);
+    transform: translateX(100vw);
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
