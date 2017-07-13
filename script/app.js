@@ -1,26 +1,19 @@
 //variable
-var ctx = document.getElementById("myChart");
+var ctx = document.getElementById("myChart").getContext('2d');
 Chart.defaults.global.defaultFontFamily = "Roboto";
 Chart.defaults.global.defaultFontSize = 18;
 Chart.defaults.global.deFaultColor = 'black';
 Chart.defaults.global.animation = {
   // Animation easing to use
-    easing: 'easeInOutQuart',
-    duration: 1200
+  easing: 'easeInOutQuart',
+  duration: 1200
 }
-
-function dataGenerator() {
-  var randomNumber = Math.floor(Math.random() * 10) + 1;
-  console.log(randomNumber);
-  return randomNumber;
-}
-
 //Chart options
 var options = {
   responsive: true,
   maintainAspectRatio: true,
   legend: {
-    display: false
+    display: true
   },
   scale: {
     ticks: {
@@ -34,11 +27,14 @@ var options = {
 
 };
 
-
-
+//Random data generator
+function dataGenerator() {
+  var randomNumber = Math.floor(Math.random() * 10) + 1;
+  return randomNumber;
+}
 
 //Create interval for random DATA
-setInterval(function() {
+/*setInterval(function() {*/
   //-----------------------------------------------------
 
   //Data for the chart
@@ -48,7 +44,7 @@ setInterval(function() {
     ],
     //Eerste bedrijf
     datasets: [{
-        label: "Bedrijf",
+        label: "Arlanet",
         backgroundColor: 'rgba(255, 64, 129, 0.5)',
         borderColor: "rgba(255, 64, 129, 1)",
         radius: 5,
@@ -98,9 +94,10 @@ setInterval(function() {
           dataGenerator(),
         ]
       }
-    ]};
+    ]
+  };
 
-
+//CREATE CHART
   var myRadarChart = new Chart(ctx, {
     type: 'radar',
     data: bedrijfData,
@@ -108,14 +105,59 @@ setInterval(function() {
   });
 
   //-------------------------------------------------------------
-}, 1500);
+/*}, 1500);*/
 
+//Controle if the company exist
+function findCompany(bedrijfNaam){
+  let foundIndex;
+  let unneededvar = bedrijfData.datasets.map(function(obj, index) {
+      if(obj.label == bedrijfNaam) {
+          foundIndex = index;
+          return true;
+      }
+  });
 
-
-function addData(chart, label, data) {
-    chart.data.labels.push('test');
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(dataGenerator());
-    });
-    chart.update();
+  return foundIndex;
 }
+
+//Add Data to Chart
+function addData() {
+  console.log(this);
+  let bedrijfNaam = this.name;
+
+  console.log('bedrijfNaam' + findCompany(bedrijfNaam));
+
+  if(findCompany(bedrijfNaam)){
+    console.log('gelukt');
+  }
+
+    let newData = {
+      label: bedrijfData.datasets[1].label,
+      backgroundColor: 'rgba(255,87,34, 0.5)',
+      borderColor: "rgba(255,87,34, 1)",
+      radius: 5,
+      pointBackgroundColor: 'rgba(255,87,34, 1)',
+      data: []
+    };
+
+    for (let i = 0; i < myRadarChart.data.labels.length; ++i){
+      newData.data.push(dataGenerator());
+    }
+
+    myRadarChart.data.datasets.push(newData);
+    myRadarChart.update();
+  };
+
+
+
+
+
+
+
+
+
+//---------------------------Event Listener -------------------------------
+document.querySelectorAll('.bedrijven li').forEach(
+  function(item, index, arr) {
+      item.addEventListener('click', addData)
+    }, this);
