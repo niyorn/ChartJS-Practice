@@ -5,25 +5,20 @@
 body {
   margin: 0;
   padding: 0;
-
   color: white;
-
   font-family: Roboto;
   font-size: 1em;
 }
 
 h1 {
   text-transform: uppercase;
-
   color: #00458d;
-
-  font-size: 6em;
+  font-size: 6em;
   font-weight: 600;
 }
 
 p {
   margin-top: 2rem;
-
   font-size: 2em
 }
 
@@ -31,16 +26,12 @@ label {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-
   width: 100%;
   height: 100%;
-
   color: black;
   border: none;
-
   font-size: 1.2em;
   line-height: 2;
-
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -48,8 +39,7 @@ label {
 
 input[type=checkbox] {
   display: none;
-
-  height: 100%;
+  height: 100%;
   margin-left: auto;
 }
 
@@ -57,15 +47,11 @@ span {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-
   width: 0.5em;
   height: 100%;
-
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-
   font-size: 2em;
-
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -81,13 +67,10 @@ input[type=checkbox]:checked+span {
 .container {
   display: grid;
   overflow: hidden;
-
   width: 100vw;
   height: 100vh;
   padding: 3rem;
-
   color: rgb(31, 31, 31);
-
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 6em;
 }
@@ -98,10 +81,9 @@ input[type=checkbox]:checked+span {
 
 .container__text {
   display: grid;
-
   height: 92vh;
-
-  grid-template-rows: repeat(2, 1fr);
+  /*grid-template-rows: repeat(2, 1fr); remove comment when you add a p tag to the .container__text*/
+  grid-row-gap: 2em
 }
 
 .bedrijven {
@@ -109,9 +91,7 @@ input[type=checkbox]:checked+span {
   display: -ms-flexbox;
   display: flex;
   overflow-y: hidden;
-
   padding-right: 17px;
-
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -121,69 +101,202 @@ input[type=checkbox]:checked+span {
 
 .bedrijven ul {
   overflow-y: scroll;
-
   width: 100%;
+  height: 100%;
 }
 
 .bedrijven ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow-y: hidden;
-
   height: 4em;
-
-  -webkit-transition: all 0.1s ease-in-out;
-  -webkit-animation: slide-in-right 0.8s ease-in-out;
-          animation: slide-in-right 0.8s ease-in-out;
-
   border-bottom: solid 1px rgba(0, 0, 0, 0.1);
-
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
-.bedrijven ul li:hover{
-  cursor:hand;
+.bedrijven ul li:hover {
+  cursor: hand;
   cursor: pointer;
-
   background-color: rgba(0, 0, 0, 0.04);
 }
 
-.bedrijven ul li label{
+.bedrijven ul li label {
   padding-left: 1em;
 }
 
-.bedrijven ul li label:hover{
-  cursor:hand;
+.bedrijven ul li label:hover {
+  cursor: hand;
   cursor: pointer;
 }
+
 .bedrijven ul li img {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   float: left;
   overflow: hidden;
-
-  width: auto;
+  width: 8em;
   height: 90%;
-
-  border-radius: 50%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  border-right: solid 1px rgba(249, 249, 249, 0.79);
 }
 
+.container__selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  z-index: 2;
+}
+
+
+.container__selection ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.container__selection ul li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 50%;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.container__selection ul li:nth-of-type(2) {
+  border-left: solid 1px rgba(0, 0, 0, 0.14);
+}
+
+.container__selection ul li button {
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 1.5em;
+  background-color: rgb(242, 242, 242);
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.container__selection ul li:hover {
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
+}
+
+.bedrijven__bedrijven-selectie {
+  max-height: 100%;
+  display: none;
+}
+
+.bedrijven__bedrijven-selectie li {
+  -webkit-animation: slide-in-up 1s ease-in;
+  animation: slide-in-up 1s ease-in;
+}
+
+.tool-tip{
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;;
+  position: relative;
+}
+.tool-tip-text{
+  visibility: hidden;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0.5rem;
+  font-size: 1.5em;
+  background-color: black;
+  color:white;
+  position: absolute;
+  top: -150%;
+  left:-4.5em;
+  width: 5em;
+  height: auto;
+  -webkit-transition: all 0.5s;
+  -webkit-transition: all 2s;
+  transition: all 0.5s;
+}
+
+.tool-tip:hover .tool-tip-text{
+  visibility: visible;
+  opacity: 1;
+}
+
+.partner-platinum, .partner-gold, .partner-silver, .partner-bronze{
+  font-size: 0.7em;
+}
+
+.partner-platinum:before{
+  content: '1';
+}
+
+.partner-gold:before{
+  content: '2';
+}
+
+.partner-silver:before{
+  content: '3';
+}
+.partner-bronze::before{
+  content: '4';
+}
+
+.partner-platinum .tool-tip-text::before{
+  content: 'Platinum partner'
+}
+
+.partner-gold .tool-tip-text::before{
+  content: 'Gold partner'
+}
+
+.partner-silver .tool-tip-text::before{
+  content: 'Silver partner'
+}
+
+.partner-bronze .tool-tip-text::before{
+  content: 'Bronze partner'
+}
 #myChart {
-  width: auto;
+  width: auto;
   height: 100%;
 }
 
-.inactive{
+.inactive {
   -webkit-animation: slide-out-down 1s;
-          animation: slide-out-down 1s;
-          visibility: hidden;
+  animation: slide-out-down 1s;
+  visibility: hidden;
+}
+
+.active {
+  display: block;
 }
 
 
-
 /*------------------Animation---------------------------*/
+
+@-webkit-keyframes slide-in-right {
+  from {
+    -webkit-transform: translateX(100vw);
+    transform: translateX(100vw);
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
 
 @-webkit-keyframes slide-in-right {
   from {
@@ -218,10 +331,32 @@ input[type=checkbox]:checked+span {
   }
 }
 
+@-webkit-keyframes slide-in-up {
+  from {
+    -webkit-transform: translateY(-110vh);
+    transform: translateY(-100vh);
+  }
+  to {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    -webkit-transform: translateY(-110vh);
+    transform: translateY(-110vh);
+  }
+  to {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
 @keyframes slide-in-down {
   from {
     -webkit-transform: translateY(100%);
-    transform: translateY(100vw);
+    transform: translateY(100%);
   }
   to {
     -webkit-transform: translateY(0);
@@ -236,7 +371,7 @@ input[type=checkbox]:checked+span {
   }
   to {
     -webkit-transform: translateY(100%);
-    transform: translateY(0);
+    transform: translateY(100%);
   }
 }
 
@@ -249,4 +384,29 @@ input[type=checkbox]:checked+span {
     -webkit-transform: translateY(100vh);
     transform: translateY(100vh);
   }
+}
+
+@-webkit-keyframes slide-out-up {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translate(100vh);
+    transform: translate(100vh);
+  }
+}
+
+@keyframes slide-out-up {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translate(60vh);
+    transform: translate(60vh);
+  }
+}
+
+
 }

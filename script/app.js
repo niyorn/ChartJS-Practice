@@ -14,7 +14,7 @@ var options = {
   responsive: true,
   maintainAspectRatio: true,
   legend: {
-    display: false
+    display: true
   },
   scale: {
     ticks: {
@@ -27,16 +27,18 @@ var options = {
   },
 };
 
+/*the catagorie of the chart*/
 var labels = ['Competentie1', 'Competentie2', 'Competentie3', 'Competentie4', 'Competentie5',
   'Competentie6', 'Competentie7', 'Competentie8'
 ];
 
+/*data for the chart*/
 var datasets = [{
-    label: "Arlanet",
-    backgroundColor: 'rgba(255, 64, 129, 0.5)',
-    borderColor: "rgba(255, 64, 129, 1)",
+    label: "RDM-Makerspace",
+    backgroundColor: 'rgba(244,67,54, 0.5)',
+    borderColor: "rgba(244,67,54, 1)",
     radius: 5,
-    pointBackgroundColor: 'rgba(255, 64, 129, 1)',
+    pointBackgroundColor: 'rgba(244,67,54, 1)',
     data: [ //Voor de test worden er random data gegenereerd
       dataGenerator(),
       dataGenerator(),
@@ -49,11 +51,11 @@ var datasets = [{
     ]
   },
   {
-    label: "Google",
-    backgroundColor: 'rgba(67, 228, 185, 0.5)',
-    borderColor: "rgba(67, 228, 185, 1)",
+    label: "KPN",
+    backgroundColor: 'rgba(233,30,99, 0.5)',
+    borderColor: "rgba(233,30,99, 1)",
     radius: 5,
-    pointBackgroundColor: 'rgba(67, 228, 185, 1)',
+    pointBackgroundColor: 'rgba(233,30,99, 1)',
     data: [ //Voor de test worden er random data gegenereerd
       dataGenerator(),
       dataGenerator(),
@@ -66,41 +68,7 @@ var datasets = [{
     ]
   },
   {
-    label: "Netflix",
-    backgroundColor: 'rgba(255,87,34, 0.5)',
-    borderColor: "rgba(255,87,34, 1)",
-    radius: 5,
-    pointBackgroundColor: 'rgba(255,87,34, 1)',
-    data: [ //Voor de test worden er random data gegenereerd
-      dataGenerator(),
-      dataGenerator(),
-      dataGenerator(),
-      dataGenerator(),
-      dataGenerator(),
-      dataGenerator(),
-      dataGenerator(),
-      dataGenerator(),
-    ]
-  },
-  {
-    label: "Youtube",
-    backgroundColor: 'rgba(244, 67, 54, 0.5)',
-    borderColor: "rgba(244, 67, 54, 1)",
-    radius: 5,
-    pointBackgroundColor: 'rgba(244, 67, 54, 1)',
-    data: [ //Voor de test worden er random data gegenereerd
-      dataGenerator(),
-      dataGenerator(),
-      dataGenerator(),
-      dataGenerator(),
-      dataGenerator(),
-      dataGenerator(),
-      dataGenerator(),
-      dataGenerator(),
-    ]
-  },
-  {
-    label: "TamTam",
+    label: "Accenture",
     backgroundColor: 'rgba(156,39,176, 0.5)',
     borderColor: "rgba(156,39,176, 1)",
     radius: 5,
@@ -117,7 +85,7 @@ var datasets = [{
     ]
   },
   {
-    label: "Digital-Engineer",
+    label: "Premium",
     backgroundColor: 'rgba(103,58,183, 0.5)',
     borderColor: "rgba(103,58,183, 1)",
     radius: 5,
@@ -134,7 +102,7 @@ var datasets = [{
     ]
   },
   {
-    label: "albert-hein",
+    label: "Alliander",
     backgroundColor: 'rgba(63,81,181, 0.5)',
     borderColor: "rgba(63,81,181, 1)",
     radius: 5,
@@ -151,7 +119,7 @@ var datasets = [{
     ]
   },
   {
-    label: "material",
+    label: "IBM",
     backgroundColor: 'rgba(33,150,243, 0.5)',
     borderColor: "rgba(33,150,243, 1)",
     radius: 5,
@@ -168,11 +136,11 @@ var datasets = [{
     ]
   },
   {
-    label: "nos-journaal",
-    backgroundColor: 'rgba(158,158,158, 0.5)',
-    borderColor: "rgba(158,158,158, 1)",
+    label: "Prodapt-Consulting",
+    backgroundColor: 'rgba(3,169,244, 0.5)',
+    borderColor: "rgba(3,169,244, 1)",
     radius: 5,
-    pointBackgroundColor: 'rgba(158,158,158, 1)',
+    pointBackgroundColor: 'rgba(3,169,244, 1)',
     data: [ //Voor de test worden er random data gegenereerd
       dataGenerator(),
       dataGenerator(),
@@ -185,11 +153,164 @@ var datasets = [{
     ]
   },
   {
-    label: "dribbble",
-    backgroundColor: 'rgba(132,255,255, 0.5)',
-    borderColor: "rgba(132,255,255, 1)",
+    label: "Quistor",
+    backgroundColor: 'rgba(0,188,212, 0.5)',
+    borderColor: "rgba(0,188,212, 1)",
     radius: 5,
-    pointBackgroundColor: 'rgba(132,255,255, 1)',
+    pointBackgroundColor: 'rgba(0,188,212, 1)',
+    data: [ //Voor de test worden er random data gegenereerd
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+    ]
+  },
+  {
+    label: "Arlanet",
+    backgroundColor: 'rgba(0,150,136, 0.5)',
+    borderColor: "rgba(0,150,136, 1)",
+    radius: 5,
+    pointBackgroundColor: 'rgba(0,150,136, 1)',
+    data: [ //Voor de test worden er random data gegenereerd
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+    ]
+  },
+  {
+    label: "sTn-Telefact",
+    backgroundColor: 'rgba(76,175,80, 0.5)',
+    borderColor: "rgba(76,175,80, 1)",
+    radius: 5,
+    pointBackgroundColor: 'rgba(76,175,80, 1)',
+    data: [ //Voor de test worden er random data gegenereerd
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+    ]
+  },
+  {
+    label: "Batenburg",
+    backgroundColor: 'rgba(139,195,74, 0.5)',
+    borderColor: "rgba(139,195,74, 1)",
+    radius: 5,
+    pointBackgroundColor: 'rgba(139,195,74, 1)',
+    data: [ //Voor de test worden er random data gegenereerd
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+    ]
+  },
+  {
+    label: "Unreason",
+    backgroundColor: 'rgba(205,220,57, 0.5)',
+    borderColor: "rgba(205,220,57, 1)",
+    radius: 5,
+    pointBackgroundColor: 'rgba(205,220,57, 1)',
+    data: [ //Voor de test worden er random data gegenereerd
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+    ]
+  },
+  {
+    label: "Mansystems",
+    backgroundColor: 'rgba(255,235,59, 0.5)',
+    borderColor: "rgba(255,235,59, 1)",
+    radius: 5,
+    pointBackgroundColor: 'rgba(255,235,59, 1)',
+    data: [ //Voor de test worden er random data gegenereerd
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+    ]
+  },
+  {
+    label: "Redsalt",
+    backgroundColor: 'rgba(255,193,7, 0.5)',
+    borderColor: "rgba(255,193,7, 1)",
+    radius: 5,
+    pointBackgroundColor: 'rgba(255,193,7, 1)',
+    data: [ //Voor de test worden er random data gegenereerd
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+    ]
+  },
+  {
+    label: "Ziut",
+    backgroundColor: 'rgba(255,152,0, 0.5)',
+    borderColor: "rgba(255,152,0, 1)",
+    radius: 5,
+    pointBackgroundColor: 'rgba(255,152,0, 1)',
+    data: [ //Voor de test worden er random data gegenereerd
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+    ]
+  },
+  {
+    label: "Conneqtech",
+    backgroundColor: 'rgba(255,87,34, 0.5)',
+    borderColor: "rgba(255,87,34, 1)",
+    radius: 5,
+    pointBackgroundColor: 'rgba(255,87,34, 1)',
+    data: [ //Voor de test worden er random data gegenereerd
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+      dataGenerator(),
+    ]
+  },
+  {
+    label: "Conrad",
+    backgroundColor: 'rgba(121,85,72, 0.5)',
+    borderColor: "rgba(121,85,72, 1)",
+    radius: 5,
+    pointBackgroundColor: 'rgba(121,85,72, 1)',
     data: [ //Voor de test worden er random data gegenereerd
       dataGenerator(),
       dataGenerator(),
@@ -238,11 +359,11 @@ function findCompany(bedrijfNaam) {
 //Add Data to Chart
 function addData() {
   let bedrijfNaam = this.id;
-  console.log(bedrijfNaam);
+  let index = findCompany(bedrijfNaam);//Check if the company exist
   let checkbox = document.querySelector('#' + bedrijfNaam + " input").checked;
   let checkboxIndicator = document.querySelector('#' + bedrijfNaam + " span");
   let lowestIndex = 0;
-  let index = findCompany(bedrijfNaam);
+
 
   if (index >= lowestIndex) {
     if (checkbox == false) {
@@ -251,9 +372,7 @@ function addData() {
       myRadarChart.update();
       checkboxIndicator.style.backgroundColor = datasets[index].backgroundColor;
       checkboxIndicator.classList.remove('inactive');
-    }
-
-    else if(checkbox == true) {
+    } else if (checkbox == true) {
       removeData(bedrijfNaam, index);
     }
   }
@@ -261,23 +380,19 @@ function addData() {
 
 //------------------------Remove data---------------------------
 function removeData(bedrijfNaam, index) {
-  console.log(myRadarChart.data);
-  console.log(myRadarChart.data.datasets)
   let foundIndex;
   let unneededvar = myRadarChart.data.datasets.map(function(obj, index) {
     if (obj.label.toUpperCase() == bedrijfNaam.toUpperCase() && obj.label !== '') {
       foundIndex = index;
       myRadarChart.data.datasets.splice(index, index + 1);
       myRadarChart.update();
-        checkboxIndicator = document.querySelector('#' + bedrijfNaam + " span").classList.add('inactive');
+      checkboxIndicator = document.querySelector('#' + bedrijfNaam + " span").classList.add('inactive');
     }
   });
 };
 
-
-
 //---------------------------Event Listener -------------------------------
-document.querySelectorAll('.bedrijven ul li').forEach(
+document.querySelectorAll('.bedrijven__bedrijven-selectie li').forEach(
   function(item, index, arr) {
     item.addEventListener('mouseup', addData)
   }, this);
