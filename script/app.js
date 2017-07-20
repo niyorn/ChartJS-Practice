@@ -364,7 +364,6 @@ function addData() {
   let checkboxIndicator = document.querySelector('#' + bedrijfNaam + " span");
   let lowestIndex = 0;
 
-
   if (index >= lowestIndex) {
     if (checkbox == false) {
       let newData = datasets[index];
@@ -380,11 +379,9 @@ function addData() {
 
 //------------------------Remove data---------------------------
 function removeData(bedrijfNaam, index) {
-  let foundIndex;
   let unneededvar = myRadarChart.data.datasets.map(function(obj, index) {
     if (obj.label.toUpperCase() == bedrijfNaam.toUpperCase() && obj.label !== '') {
-      foundIndex = index;
-      myRadarChart.data.datasets.splice(index, index + 1);
+      myRadarChart.data.datasets.splice(index, 1);
       myRadarChart.update();
       checkboxIndicator = document.querySelector('#' + bedrijfNaam + " span").classList.add('inactive');
     }
